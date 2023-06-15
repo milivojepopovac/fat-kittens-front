@@ -13,8 +13,8 @@
   "PUBLIC_WEI_COST": "2000000000000000",
   "SALE_FLAG": 0,
   "DISPLAY_COST": 600,
-  "GAS_LIMIT": 1000000,
+  "GAS_LIMIT": 400000,
   "MARKETPLACE": "Sparkles",
-  "MARKETPLACE_LINK": "https://sparklesnft.com/collection/grumpy-punks/",
+  "MARKETPLACE_LINK": "https://sparklesnft.com/collection/flare/0x93365aace3db5407b0976c0a6c5f46b21bad3923/",
   "SHOW_BACKGROUND": true
 }
