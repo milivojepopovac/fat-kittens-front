@@ -126,17 +126,17 @@ function App() {
   });
 
   const claimNFTs = async () => {
-    let cost = CONFIG.PUBLIC_WEI_COST;
+    let cost = data.cost;
     let gasLimit = CONFIG.GAS_LIMIT;
     const saleFlag = await blockchain.smartContract.methods._saleFlag().call();
     if (saleFlag == 0) {
       console.log("PAUSED MODE");
     } else if (saleFlag == 1) {
-      cost = CONFIG.PRESALE_WEI_COST;
+      cost = data.presaleCost;
     }
-    console.log("Sale Flag: ", saleFlag);
     let totalCostWei = Web3.utils.toBN(cost).mul(Web3.utils.toBN(mintAmount));
     let totalGasLimit = gasLimit * mintAmount;
+    console.log("Sale Flag: ", saleFlag);
     console.log("Cost: ", cost);
     console.log("Total Cost: ", totalCostWei.toString());
     console.log("Gas limit: ", totalGasLimit);
@@ -276,7 +276,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs <b style={{color: data.saleFlag == 1 ? "grey" : "var(--accent-text)"}}>{CONFIG.DISPLAY_COST}</b>{" "}
+                  1 {CONFIG.SYMBOL} costs <b style={{color: data.saleFlag == 1 ? "grey" : "var(--accent-text)"}}>{Web3.utils.fromWei(data.cost, 'ether')}</b>{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
@@ -334,7 +334,7 @@ function App() {
                     <s.SpacerMedium />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledRoundButton
-                        style={{ lineHeight: 0.4 }}
+                        style={{ lineHeight: 0.4, color: "var(--secondary)" }}
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
@@ -354,6 +354,7 @@ function App() {
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
+                        style={{ color: "var(--secondary)" }}
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();

@@ -33,11 +33,21 @@ export const fetchData = () => {
         .getState()
         .blockchain.smartContract.methods._saleFlag()
         .call();
+      let presaleCost = await store
+        .getState()
+        .blockchain.smartContract.methods.presaleCost()
+        .call();
+      let cost = await store
+        .getState()
+        .blockchain.smartContract.methods.cost()
+        .call();
 
       dispatch(
         fetchDataSuccess({
           totalSupply,
           saleFlag,
+          presaleCost,
+          cost,
         })
       );
     } catch (err) {

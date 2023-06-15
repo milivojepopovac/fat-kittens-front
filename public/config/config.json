@@ -3,17 +3,17 @@
   "SCAN_LINK": "https://songbird-explorer.flare.network/address/0x8bcC6EC3e5aa07b7bF9fc31a3bDad5d5C163701A/transactions#address-tabs",
   "NETWORK": {
     "NAME": "Flare",
-    "SYMBOL": "SGB",
-    "ID": 19
+    "SYMBOL": "FLR",
+    "ID": 14
   },
-  "NFT_NAME": "Fat Kittens",
+  "NFT_NAME": "The Fat Kittens",
   "SYMBOL": "FK",
   "MAX_SUPPLY": 10000,
   "PRESALE_WEI_COST": "1000000000000000",
   "PUBLIC_WEI_COST": "2000000000000000",
   "SALE_FLAG": 0,
   "DISPLAY_COST": 600,
-  "GAS_LIMIT": 285000,
+  "GAS_LIMIT": 1000000,
   "MARKETPLACE": "Sparkles",
   "MARKETPLACE_LINK": "https://sparklesnft.com/collection/grumpy-punks/",
   "SHOW_BACKGROUND": true
