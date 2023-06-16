@@ -276,7 +276,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs <b style={{color: data.saleFlag == 1 ? "grey" : "var(--accent-text)"}}>{Web3.utils.fromWei(data.cost, 'ether')}</b>{" "}
+                  1 {CONFIG.SYMBOL} costs <b style={{color: data.saleFlag == 1 ? "grey" : "var(--accent-text)"}}>{data.saleFlag == 1 ?  Web3.utils.fromWei(data.presaleCost, 'ether'): Web3.utils.fromWei(data.cost, 'ether')}</b>{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
